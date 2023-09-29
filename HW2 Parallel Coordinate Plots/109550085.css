@@ -1,0 +1,53 @@
+body {
+    margin: 0px;
+    overflow: hidden;
+  }
+  
+  path {
+    fill: none;
+    opacity: 0.3;
+    stroke-width: 2;
+  }
+  
+  text {
+    font-family: sans-serif;
+  }
+  
+  .title {
+      font-size: 2.5em;
+    fill: #635F5D;
+    text-align: justifyjustify;
+  }
+  
+  .tick text {
+    font-size: 1.8em;
+      fill: #635F5D;
+    cursor: pointer;
+  }
+  
+  .tick line {
+      stroke: #C0C0BB;
+  }
+  
+  .axis-label {
+      font-size: 2.5em;
+      fill: #8E8883;
+    text-transform: capitalize;
+    cursor: pointer;
+  }
+  
+  .Iris-setosa_color {
+    font-size: 1.5em;
+       fill: #E6842A;
+  }
+  
+  .Iris-versicolor_color {
+    font-size: 1.5em;
+       fill: #137B80;
+  }
+  
+  .Iris-virginica_color {
+    font-size: 1.5em;
+       fill: #8E6C8A;
+  }
+  
