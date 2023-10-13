@@ -1,24 +1,3 @@
-const width = 960,
-      size = 270,
-      padding = 30;
-
-const x = d3.scaleLinear()
-    .range([padding / 2, size - padding / 2]);
-
-const y = d3.scaleLinear()
-    .range([size - padding / 2, padding / 2]);
-
-const xAxis = d3.axisBottom()
-    .scale(x)
-    .ticks(6);
-
-const yAxis = d3.axisLeft()
-    .scale(y)
-    .ticks(6);
-
-const color = d3.scaleOrdinal()
-    .range(['#E6842A', '#137B80', '#8E6C8A']);
-
 const cross = (a, b) => {
   const c = [], n = a.length, m = b.length;
   for (var i = -1; ++i < n;) 
@@ -28,13 +7,36 @@ const cross = (a, b) => {
 }
 
 const render = data => {
+  const width = 960,
+      size = 270,
+      padding = 20;
+  
 	var colExtent = {},
-      cols = d3.keys(data[0]).filter(d => d !== "class"),
+      cols = ['sepal length', 'sepal width', 'petal length', 'petal width'],
       n = cols.length;
 
   cols.forEach(col => {
     colExtent[col] = d3.extent(data, d => d[col]);
+    colExtent[col][1] += 0.5;
   });
+  
+  const y = d3.scaleLinear()
+    .range([size - padding / 2, padding / 2]);
+
+  const yAxis = d3.axisLeft()
+    .scale(y)
+    .ticks(6);
+
+  const color = d3.scaleOrdinal()
+    .domain(['Iris-setosa', 'Iris-versicolor', 'Iris-virginica'])
+    .range(['#E6842A', '#137B80', '#8E6C8A']);
+   
+  const x = d3.scaleLinear()	
+    .range([padding / 2, size - padding / 2]);
+  
+  const xAxis = d3.axisBottom()
+    .scale(x)
+    .ticks(6);
 
   xAxis.tickSize(size * n);
   yAxis.tickSize(-size * n + padding / 2);
@@ -71,7 +73,7 @@ const render = data => {
         y.domain(colExtent[d]); 	
         d3.select(this).call(yAxis); 
       });
-
+  
   var cell = svg.selectAll(".cell")
     .data(cross(cols, cols))
     .enter().append("g")
@@ -85,7 +87,7 @@ const render = data => {
       .attr("y", padding)
       .attr("dy", ".73em")
     .text(d => d.x);
-
+	
   cell.call(brush);
   
   svg.append('text')
@@ -139,14 +141,34 @@ const render = data => {
         .attr("y", padding / 2)
         .attr("width", size - padding)
         .attr("height", size - padding);
-
-    cell.selectAll("circle")
+    
+    if (p.x === p.y) {
+      const histData = data.map(d => d[p.x]);
+      
+      const bins = d3.histogram()
+      	.domain(x.domain())
+      	.thresholds(x.ticks(6))(histData);
+      
+      const barWidth = (size - padding) / bins.length;
+			
+    	cell.selectAll(".bar")
+      	.data(bins)
+      	.enter().append("rect")
+      		.attr("x", d => x(d.x0))
+          .attr("y", d => size - padding / 2  - d.length / histData.length * (size - padding))
+          .attr("width", barWidth)
+          .attr("height", d => d.length / histData.length * (size - padding))
+          .style("fill", "steelblue");
+    }
+    else {
+    	cell.selectAll("circle")
       .data(data)
       .enter().append("circle")
         .attr("cx", d => x(d[p.x]))
         .attr("cy", d => y(d[p.y]))
         .attr("r", 4)
         .style("fill", d => color(d.class));
+    }
   }
 
   var brushCell;
