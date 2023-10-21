@@ -1,0 +1,76 @@
+text {
+	fill: #161514;
+}
+
+h2 {
+	text-align: center;
+  color: #635F5D;
+  font-size: 40px;
+}
+
+p {
+	font-size: 28px;
+}
+
+.axis text {
+	font-family: sans-serif;
+  font-size: 10px;
+}
+
+.axis path, .axis line {
+	fill: none;
+  stroke: #888;
+  shape-rendering: crispEdges
+}
+
+.color legend text {
+	font-family: 'Open Sans', sans-serif;
+  font-size: 16pt;
+}
+
+#menus {
+	font-size: 2em;
+  margin-left: 180px;
+}
+
+#menus select {
+  font-size: 1.3rem;
+	text-transform: capitalize;
+  appearance: none;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+#menus select option {
+	font-size: 0.9rem;
+}
+
+#tooltip {
+	position: absolute;
+	width: 265px;
+	height: auto;
+	padding: 10px;
+	background-color: white;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+	box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+	pointer-events: none;
+}
+			
+#tooltip.hidden {
+	display: none;
+}
+			
+#tooltip p {
+	margin: 0;
+	font-family: sans-serif;
+	font-size: 10px;
+	line-height: 16px;
+}
