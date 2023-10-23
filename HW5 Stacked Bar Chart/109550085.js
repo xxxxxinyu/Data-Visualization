@@ -5,13 +5,13 @@ d3.csv("http://vis.lab.djosix.com:2023/data/TIMES_WorldUniversityRankings_2024.c
   	data = loadedData.filter(d => d.scores_overall_rank <= 2010);
  
   	data.forEach(d => {
-    	d["rank"] = +d["scores_overall_rank"]/10;
+      d["rank"] = +d["scores_overall_rank"]/10;
       d["overall"] = +d["scores_overall"];
       d["scores_overall_rank"] = +d["scores_overall_rank"];
-      d["teaching"] = +d["scores_teaching"]*0.3;
-      d["research"] = +d["scores_research"]*0.3;
+      d["teaching"] = +d["scores_teaching"]*0.295;
+      d["research"] = +d["scores_research"]*0.29;
       d["citations"] = +d["scores_citations"]*0.3;
-      d["industry income"] = +d["scores_industry_income"]*0.025;
+      d["industry income"] = +d["scores_industry_income"]*0.04;
       d["international outlook"] = +d["scores_international_outlook"]*0.075;
     });
   render();
