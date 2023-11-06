@@ -1,0 +1,46 @@
+body {
+    background-color: #ffffff;
+    text-align: center;
+}
+
+h2 {
+	text-align: center;
+    color: #635F5D;
+    font-size: 40px;
+}
+
+text {
+    font-family: sans-serif;
+    color: #635F5D;
+}
+
+.tick text {
+    font-size: 1em;
+      fill: #635F5D;
+}
+  
+.tick line {
+    stroke: #C0C0BB;
+}
+
+#menus {
+	font-size: 1.2em;
+    margin-left: 90px;
+    margin-top: 40px;
+}
+
+#menus select {
+    font-size: 1.1rem;
+    text-transform: capitalize;
+    appearance: none;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+#menus select option {
+	font-size: 1rem;
+}
