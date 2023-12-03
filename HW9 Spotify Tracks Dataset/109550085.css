@@ -1,0 +1,116 @@
+body {
+    background-color: #E5E2E0;
+}
+
+text {
+    font-family: 'Share Tech', sans-serif;
+}
+
+h1 {
+    font-family: 'Share Tech', sans-serif;
+    text-align: center;
+    color: #635F5D;
+}
+
+.tooltip {
+    position: absolute;
+    background-color: #f9f9f9;
+    border: 1px solid #aaa;
+    padding: 8px;
+    border-radius: 5px;
+    pointer-events: none;
+    font-size: 20px;
+    font-family: 'Share Tech', sans-serif;
+}
+
+.yAxisLabel {
+    font-size: 1.5em;
+    font-family: 'Share Tech', sans-serif;
+    color: #333;
+}
+
+#selectGenre {
+    font-size: 2.2em;
+    font-family: 'Share Tech', sans-serif;
+    margin-left: 180px;
+    color: #333;
+}
+
+#selectGenre select {
+    font-size: 1.8rem;
+    font-family: 'Share Tech', sans-serif;
+    text-transform: capitalize;
+    appearance: none;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+#selectGenre select option {
+	font-size: 1.5rem;
+    background-color: #ddd;
+    color: #333;
+}
+
+#selectFeature {
+    font-size: 2.2em;
+    font-family: 'Share Tech', sans-serif;
+    margin-left: 450px;
+    color: #333;
+}
+
+#selectFeature select {
+    font-size: 1.8rem;
+    font-family: 'Share Tech', sans-serif;
+    text-transform: capitalize;
+    appearance: none;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+#selectFeature select option {
+	font-size: 1.5rem;
+    background-color: #ddd;
+    color: #333;
+}
+
+#popup {
+    display: none;
+    position: absolute;
+    background-color: #C1BAA9;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#popupTitle {
+    font-size: 24px;
+    font-family: 'Share Tech', sans-serif;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+#popupContent {
+    font-size: 16px;
+    font-family: 'Share Tech', sans-serif;
+    color: #333;
+}
+
+#popupClose {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 16px;
+    font-family: 'Share Tech', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    color: #e76a6a;
+}
