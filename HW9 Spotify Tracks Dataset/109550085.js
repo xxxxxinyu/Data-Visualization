@@ -252,11 +252,12 @@ const DrawBarChart = data => {
     d3.select("#selectFeature").call(dropdownMenu, "feature");
 
     let selectedData = data.filter(d => d.track_genre == selectedGenre);
-    let sortData = d3.sort(selectedData, (a, b) => d3.descending(a[selectedFeature], b[selectedFeature]))
 
     if (selectedFeature == "Select Feature...") {
         selectedFeature = "popularity";
     }
+
+    let sortData = d3.sort(selectedData, (a, b) => d3.descending(a[selectedFeature], b[selectedFeature]))
 
     const yValue = d => d[selectedFeature];
     
